@@ -51,7 +51,9 @@ body {
     .round {
         border-radius: 50%;
         }
-
+    h1 {
+        font-size: 6vh;
+    }
 }
 
 /* Styles for screens larger than 600px */
@@ -60,7 +62,6 @@ body {
     /* Insert your styles here */
     .box {
         width: 40vw;
-        padding-top: 10%;
         display: flex;
         align-content: center;
     }
@@ -76,6 +77,9 @@ body {
     .clicky {
         width: 46%;
     }
+    h1 {
+        font-size: 15vh;
+    }
 }
 .box {
     margin: auto;
@@ -87,9 +91,9 @@ body {
 
 h1 {
     margin: 0 auto;
-    font-size: 6vh;
     text-align: center;
     padding-top: 50px;
+    font-family: fat;
 }
 .dropdown-content {
     display: none;
@@ -149,4 +153,7 @@ p {
     display: inline;
     font-size: larger;
 }
-
+@font-face {
+    font-family: fat;
+    src: url(FloralpersonaluseBold-2OYod.otf);
+}
