@@ -1,0 +1,29 @@
+.btn {
+    display: box;
+    position: relative;
+    background: linear-gradient(to bottom, hotpink 0%, tomato 100%);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    line-height: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+
+.btn::before {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    background: black;
+    opacity: 0;
+    content: '';
+    animation: pulse 1s infinite;
+}
+
+.btn:hover::before {
+    animation: none;
+    opacity: .4;
+    transform: scale(1.3);
+}

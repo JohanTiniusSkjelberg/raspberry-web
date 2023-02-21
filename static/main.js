@@ -22,12 +22,15 @@ $('.en, .to').click(function (e) {
 $('#clic').click(function (e) {
     var onOff = $('#clic').text();
     onOff = onOff == "on" ? 'off' : 'on';
-    if (onOff=="on") {
-        $("#clic").css("background-color","palegreen");
-        }
+    if (onOff == "on") {
+        $("#clic").css("background-color", "white");
+        $("#clic").css("color", "black");
+
+    }
     else {
-        $("#clic").css("background-color","lightcoral");
-        }
+        $("#clic").css("background-color", "black");
+        $("#clic").css("color", "white");
+    }
     console.log(window.location.href);
     document.getElementById('clic').innerHTML = onOff;
     $.ajax({

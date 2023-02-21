@@ -1,6 +1,20 @@
 let timer = 8;
 let minutter = 0;
 
+window.onload = function() {
+    first_dropdown();
+    second_dropdown();
+    var onOff = $('#clic').text();
+    if (onOff == "on") {
+        $("#clic").css("background-color", "white");
+        $("#clic").css("color", "black");
+
+    }
+    else {
+        $("#clic").css("background-color", "black");
+        $("#clic").css("color", "white");
+    }
+}
 
 function doDate() {
     var dt = new Date();
@@ -88,13 +102,4 @@ window.onclick = function (event) {
         minutter = number_clicked;
         close_dropdown();
     }
-}
-first_dropdown();
-second_dropdown();
-var onOff = $('#clic').text();
-if (onOff=="on") {
-    $("#clic").css("background-color","palegreen");
-}
-else {
-    $("#clic").css("background-color","lightcoral");
 }
