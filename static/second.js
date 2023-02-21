@@ -52,23 +52,22 @@ function second_dropdown() {
     }
 }
 function myFunction1() {
-                    document.getElementById("myDropdown1").classList.toggle("show1");
-                    let obj = $("#time")
-                    let position = obj.position();
-                    position.top += parseInt(obj.css('margin-top'), 10);
-                    position.left += parseInt(obj.css('margin-left'), 10);
-                    console.log(position);
-                    $("#myDropdown1").css("top", position["top"]);
-                    $("#myDropdown1").css("left", position["left"]);
-                }
-                function myFunction2() {
-                    document.getElementById("myDropdown2").classList.toggle("show2");
-                    let obj = $("#minutt")
-                    let position = obj.position();
-                    position.top += parseInt(obj.css('margin-top'), 10);
-                    position.left += parseInt(obj.css('margin-left'), 10);
-                    $("#myDropdown2").css("top",position["top"]);
-                    $("#myDropdown2").css("left",position["left"]);
+        document.getElementById("myDropdown1").classList.toggle("show1");
+        let obj = $("#time")
+        let position = obj.position();
+        position.top += parseInt(obj.css('margin-top'), 10);
+        position.left += parseInt(obj.css('margin-left'), 10);
+        $("#myDropdown1").css("top", position["top"]);
+        $("#myDropdown1").css("left", position["left"]);
+            }
+function myFunction2() {
+        document.getElementById("myDropdown2").classList.toggle("show2");
+        let obj = $("#minutt")
+        let position = obj.position();
+        position.top += parseInt(obj.css('margin-top'), 10);
+        position.left += parseInt(obj.css('margin-left'), 10);
+        $("#myDropdown2").css("top",position["top"]);
+        $("#myDropdown2").css("left",position["left"]);
                 }
 function close_dropdown() {
     var dropdowns = document.getElementsByClassName("dropdown-content");

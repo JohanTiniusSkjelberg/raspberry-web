@@ -1,7 +1,13 @@
-$('.en, .to').click(function (e) {
-    var time = $('#time').text();
-    var minutt = $('#minutt').text();
-    e.preventDefault();
+$('.dropdown-content').click(function (event) {
+    if (event.target.className=="en"){
+        var minutt = $('#minutt').text();
+        var time = event.target.innerHTML;
+    }
+    else {
+        var time = $('#time').text();
+        var minutt = event.target.innerHTML;
+    }
+    event.preventDefault();
     $.ajax({
         url: window.location.href + '/a/',
         data: { 'timer_': time, 'minutter_': minutt },
