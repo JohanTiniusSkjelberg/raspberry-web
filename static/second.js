@@ -25,6 +25,7 @@ function doDate() {
     var timeDiff = newdate-date;
     var diffHours = hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
     var diffMinutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+    $(".wakeuptime").text(`${diffHours} : ${diffMinutes}`)
     console.log(diffHours,diffMinutes);
 }
 
