@@ -59,6 +59,8 @@ function myFunction1() {
         position.left += parseInt(obj.css('margin-left'), 10);
         $("#myDropdown1").css("top", position["top"]);
         $("#myDropdown1").css("left", position["left"]);
+        let offset = document.querySelector(".en").offsetHeight;
+        $("#myDropdown1").scrollTop(parseInt(obj.text())*offset);
             }
 function myFunction2() {
         document.getElementById("myDropdown2").classList.toggle("show2");
@@ -68,6 +70,8 @@ function myFunction2() {
         position.left += parseInt(obj.css('margin-left'), 10);
         $("#myDropdown2").css("top",position["top"]);
         $("#myDropdown2").css("left",position["left"]);
+        let offset = document.querySelector(".to").offsetHeight;
+        $("#myDropdown2").scrollTop(parseInt(obj.text())*offset);
                 }
 function close_dropdown() {
     var dropdowns = document.getElementsByClassName("dropdown-content");

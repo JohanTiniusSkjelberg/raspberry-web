@@ -1,13 +1,14 @@
 .btn {
     display: box;
     position: relative;
-    background: linear-gradient(to bottom, hotpink 0%, tomato 100%);
+    background: linear-gradient(to bottom, white 0%, white 100%);
     box-shadow: 0 4px 4px rgba(0, 0, 0, .3);
     border-radius: 50%;
+    border: 2px solid black;
     line-height: 100px;
     text-align: center;
     text-decoration: none;
-    color: white;
+    color: darkseagreen;
 }
 
 
