@@ -15,23 +15,20 @@ window.onload = function() {
         $("#clic").css("color", "white");
     }
 }
-
 function doDate() {
-    var dt = new Date();
-    var time2 = parseInt(document.getElementById('time').innerHTML);
-    var min2 = parseInt(document.getElementById('minutt').innerHTML);
-    var total_min2 = time2 * 60 + min2;
-    var dthour = parseInt(dt.getHours());
-    var dtmin = parseInt(dt.getMinutes());
-    const total_min_now = dthour * 60 + dtmin;
-    var finale = total_min2 - total_min_now;
-    var finH = Math.floor(finale / 60);
-    var finM = (finale % 60).toString();
-    finM = finM.toString().length == 1 ? "0" + finM : finM;
-    var news = finH.toString() + ":" + finM;
-    //document.getElementById('date-time').innerHTML = news;
+    let date = new Date();
+    let timerdiff = $("#time").text()
+    let minutterdiff = $("#minutt").text()
+    let month = date.getMonth() + 1
+    let day = date.getDate() + 1
+    let newdate = new Date(date.getFullYear(),month,day,parseInt(timerdiff),parseInt(minutterdiff))
+    var timeDiff = newdate-date;
+    var diffHours = hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+    var diffMinutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+    console.log(diffHours,diffMinutes);
 }
-//setInterval(doDate, 500);
+
+setInterval(doDate, 1000);
 
 function first_dropdown() {
     let drop = document.getElementById('myDropdown1');
