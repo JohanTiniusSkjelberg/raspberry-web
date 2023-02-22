@@ -25,8 +25,11 @@ function doDate() {
     var timeDiff = newdate-date;
     var diffHours = hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
     var diffMinutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+    diffMinutes = diffMinutes.toString()
+    diffHours = diffHours.toString()
+    diffMinutes = diffMinutes.length ==1 ? "0"+ diffMinutes : diffMinutes
+    diffHours = diffHours.length ==1 ? "0" + diffHours : diffHours
     $(".wakeuptime").text(`${diffHours} : ${diffMinutes}`)
-    console.log(diffHours,diffMinutes);
 }
 
 setInterval(doDate, 1000);
