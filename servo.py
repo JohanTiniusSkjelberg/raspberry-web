@@ -53,13 +53,13 @@ def servo_running_easy():
     pwm.stop()
     GPIO.cleanup()
 def servo_running():
-    with open('/var/www/flask/files/tider.txt','r') as file:
+    with open('/var/www/piapp/files/tider.txt','r') as file:
         timer, minutter = map(int,file.read().split())
         date = datetime.datetime.now()
         if date.hour != timer or date.minute!=minutter:
             exit(0)
             return
-    with open('/var/www/flask/files/on.txt','r') as file:
+    with open('/var/www/piapp/files/on.txt','r') as file:
         text = file.read()
         print(text)
         if text == 'off':
