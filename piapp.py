@@ -16,7 +16,7 @@ print(22)
 def change_txt():
     timer = request.form.get('timer_')
     minutter = request.form.get('minutter_')
-    with open('/var/www/piapp/files/tider.txt','w') as file:
+    with open('/var/www/flask/files/tider.txt','w') as file:
         file.write(str(timer)+'\n')
         file.write(str(minutter))
     print('endret tid')
@@ -24,7 +24,7 @@ def change_txt():
 @app.route('/on/', methods=['POST'])
 def onOff():
     insert_text = request.form.get('sendt_')
-    with open('/var/www/piapp/files/on.txt','w') as file:
+    with open('/var/www/flask/files/on.txt','w') as file:
         file.write(insert_text)
     return 'ok'
 @app.route('/off/', methods=['POST'])
@@ -37,9 +37,9 @@ def running_servo():
     return 'ye boy'
 @app.route('/', methods=['POST','GET'])
 def index():
-    f =  open('/var/www/piapp/files/tider.txt','r')
+    f =  open('/var/www/flask/files/tider.txt','r')
     TIMER, MINUTTER = f.read().split()
-    with open('/var/www/piapp/files/on.txt','r') as file:
+    with open('/var/www/flask/files/on.txt','r') as file:
         ON = file.read()
     if request.method == 'POST':
         return 'nei'
