@@ -6,8 +6,6 @@ from servo import servo_running_easy
 from servo import off_servo_running_easy
 
 
-
-
 app = Flask(__name__)
 
 @app.route('/a/', methods=['POST'])
