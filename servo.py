@@ -5,12 +5,6 @@ import datetime
 import RPi.GPIO as GPIO
 
 
-# from gpiozero.pins.pigpio import PiGPIOFactory
-# my_factory = PiGPIOFactory()
-
-#with open('/var/www/flask/files/klokkeslett.txt','a') as file:
-#    file.write(str(datetime.datetime.now())+'\n')
-
 def setup_servo(pin_num):
     # Set up the GPIO pins
     GPIO.setmode(GPIO.BCM)
@@ -24,14 +18,6 @@ def setup_servo(pin_num):
 def move_servo(angle,pwm):
   duty = angle / 18 + 2
   pwm.ChangeDutyCycle(duty)
-
-#servo = AngularServo(18, min_pulse_width=0.0008, max_pulse_width=0.0028,pin_factory = my_factory)
-
-
-#servo.angle = 80 #down
-#sleep(3)
-#servo.angle = -20 #up 
-#sleep(1)
 
 def off_servo_running_easy():
     pwm = setup_servo(27)
@@ -53,13 +39,13 @@ def servo_running_easy():
     pwm.stop()
     GPIO.cleanup()
 def servo_running():
-    with open('/var/www/flask/files/tider.txt','r') as file:
+    with open('/var/www/piapp/files/tider.txt','r') as file:
         timer, minutter = map(int,file.read().split())
         date = datetime.datetime.now()
         if date.hour != timer or date.minute!=minutter:
             exit(0)
             return
-    with open('/var/www/flask/files/on.txt','r') as file:
+    with open('/var/www/piapp/files/on.txt','r') as file:
         text = file.read()
         print(text)
         if text == 'off':
